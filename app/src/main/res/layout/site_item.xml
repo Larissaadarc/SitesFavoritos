@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:id="@+id/edittext_apelido"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textview_apelido"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
-        android:hint="@string/site_apelido"
-        android:inputType="text" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
-        android:id="@+id/edittext_url"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textview_url"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/site_url"
-        android:inputType="textWebEditText" />
+        android:layout_marginStart="16dp"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toStartOf="@+id/textview_apelido"
+        app:layout_constraintTop_toBottomOf="@+id/textview_apelido"/>
 
+    <ImageView android:id="@+id/img_coracao"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_favorite_24"
+        app:layout_constraintEnd_toStartOf="@+id/img_delete"
+        app:layout_constraintTop_toTopOf="@id/textview_apelido"/>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_delete_24"
+        app:layout_constraintTop_toTopOf="@id/textview_apelido"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
